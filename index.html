@@ -35,6 +35,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#courses">Courses</a>
                 </li>
+                <li class="nav-item"></li>
+                    <a class="nav-link" href="#certifications">Certificate Verification</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Contact</a>
                 </li>
@@ -283,6 +286,79 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Certifications Section -->
+<section id="certifications" class="certifications py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="section-title mb-4">Certificate Verification</h2>
+                <p class="section-description mb-5">Verify the authenticity of your Tech certification using your unique certificate ID</p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="verification-card">
+                    <div class="card-header text-center">
+                        <i class="fas fa-certificate verification-icon"></i>
+                        <h3>Verify Certificate</h3>
+                    </div>
+                    
+                    <div class="card-body">
+                        <form id="certForm" class="verification-form">
+                            <div class="form-group">
+                                <label for="certId">Certificate ID</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fas fa-id-badge"></i>
+                                        </span>
+                                    </div>
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        id="certId" 
+                                        placeholder="Enter your certificate ID (e.g., TECH-2024-XXXX)"
+                                        pattern="TECH-\d{4}-[A-Z0-9]{4}"
+                                        required
+                                    >
+                                </div>
+                                <small class="form-text text-muted">Format: TECH-YYYY-XXXX</small>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-block verify-btn">
+                                <i class="fas fa-search mr-2"></i>
+                                Verify Certificate
+                            </button>
+                        </form>
+                        <!-- Result Card  -->
+                        <div id="certResult" class="result-card mt-4" style="display: none;">
+                            <div class="result-header">
+                                <i class="fas fa-check-circle success-icon"></i>
+                                <h4>Certificate Verified</h4>
+                            </div>
+                            <div class="result-body">
+                                <div class="cert-info">
+                                    <p><strong>Student Name:</strong> <span id="studentName"></span></p>
+                                    <p><strong>Course:</strong> <span id="courseName"></span></p>
+                                    <p><strong>Issue Date:</strong> <span id="issueDate"></span></p>
+                                    <p><strong>Certificate ID:</strong> <span id="certificateId"></span></p>
+                                    <p><strong>Status:</strong> <span id="certStatus" class="badge badge-success">Valid</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Error Message -->
+                        <div id="errorMessage" class="alert alert-danger mt-4" style="display: none;">
+                            <i class="fas fa-exclamation-circle mr-2"></i>
+                            <span id="errorText"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
